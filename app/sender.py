@@ -66,4 +66,11 @@ def run_daily_send(template_name: str | None = None, params: dict | None = None)
             )
         db.commit()
 
-    return {"date": today, "template": template, "sent": sent, "skipped": skipped, "errors": errors}
+    return {
+    "date": today.isoformat(),
+    "template": template,
+    "sent": sent,
+    "skipped": skipped,
+    "errors": errors
+}
+
